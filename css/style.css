@@ -1147,3 +1147,10 @@ font[style] { background: transparent !important; box-shadow: none !important; }
 .hero-flip.is-flipped .hero-flip-page { transform: rotateY(-180deg); box-shadow: none; pointer-events: none; }
 .hero-flip.is-done .hero-flip-page { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) { .hero-flip-page { display: none; } }
+/* Mobile / tablet: the form is much taller than the photo, so size the box to the photo (2:3) while the
+   page is showing; once the page starts turning, the box grows to the form's height. */
+@media (max-width: 991.98px) {
+  .hero-flip:not(.is-flipped) { aspect-ratio: 2 / 3; overflow: hidden; border-radius: 14px; }
+  .hero-flip:not(.is-flipped) .hero-form-card { position: absolute; inset: 0; }
+  .hero-flip-page img { object-position: center top; }
+}
