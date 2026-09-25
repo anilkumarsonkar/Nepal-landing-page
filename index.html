@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en" data-specialty="oncology">
+<head>
+  <!-- ============================================================
+       GLOBALCARE HEALTH — NEPAL LANDING PAGE (3 SPECIALTY VARIANTS)
+       One template, three entry variants selected by the Google ad group:
+         Oncology  →  /            or  ?s=oncology   (default)
+         BMT       →  /bmt         or  ?s=bmt
+         Cardiac   →  /cardiac     or  ?s=cardiac
+       The variant is applied before first paint (inline script below) by setting
+       data-specialty on <html>. Content blocks carry .v-oncology / .v-bmt / .v-cardiac;
+       hospital cards carry .h-oncology / .h-bmt / .h-cardiac. Everything else is shared.
+
+       [GCH TO CONFIRM] markers in comments = data GlobalCare must verify before launch.
+       Stack: HTML5 + CSS3 + Bootstrap 5 + Vanilla JS + Font Awesome
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Apply the specialty variant BEFORE render (no flash of the wrong content) -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var s = (p.get('s') || p.get('specialty') || '').toLowerCase();
+      if (!s) {
+        var path = location.pathname.toLowerCase();
+        if (/\/bmt(\/|\.html)?$/.test(path)) s = 'bmt';
+        else if (/\/cardiac(\/|\.html)?$/.test(path)) s = 'cardiac';
+      }
+      if (s === 'blood' || s === 'blood-cancer' || s === 'haematology' || s === 'hematology') s = 'bmt';
+      if (s === 'heart' || s === 'cardiology') s = 'cardiac';
+      if (s === 'cancer') s = 'oncology';
+      if (s !== 'bmt' && s !== 'cardiac') s = 'oncology';
+      document.documentElement.setAttribute('data-specialty', s);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <!-- ============================= SEO (default = Oncology; script.js swaps title/description per variant) ============================= -->
+  <title>Cancer Treatment in India for Nepal Patients | GlobalCare</title>
+  <meta name="description" content="Explore cancer treatment options in India for patients from Nepal. Get specialist and hospital coordination, indicative costs, Nepali support, travel and arrival guidance." />
+  <meta name="keywords" content="cancer treatment in india, cancer treatment india, cancer hospital india, cancer treatment in india for foreigners, cancer treatment india cost, cancer treatment in india from nepal, cancer treatment india nepal, cancer hospital india for nepali patients, cancer treatment india for nepal patients, cancer hospital in india, oncology hospital india, cancer specialist india, cancer treatment cost india, cancer surgery cost india, chemotherapy cost india, cancer treatment price india, oncology treatment cost india, chemotherapy india, cancer surgery india, radiation therapy india, immunotherapy india, bone marrow transplant india, BMT cost in india, blood cancer treatment india, heart surgery in india, bypass surgery cost india, valve replacement india, cardiac hospital india" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="GlobalCare Health" />
+  <link rel="canonical" href="https://www.globalcarehealth.com/nepal" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Treatment in India for Nepal Patients | GlobalCare Health" />
+  <meta property="og:description" content="Share your medical reports and understand treatment options, an indicative cost and what happens next — before you commit to travel." />
+  <meta property="og:url" content="https://www.globalcarehealth.com/nepal" />
+  <meta property="og:site_name" content="GlobalCare Health" />
+  <meta property="og:image" content="images/og-nepal-india.svg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Treatment in India for Nepal Patients | GlobalCare Health" />
+  <meta name="twitter:description" content="Understand your treatment options in India — before you travel." />
+  <meta name="twitter:image" content="images/og-nepal-india.svg" />
+
+  <link rel="icon" type="image/png" href="images/favicon.svg" />
+
+  <!-- Fonts & Libraries -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260925b" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "GlobalCare Health",
+    "url": "https://www.globalcarehealth.com/",
+    "logo": "https://www.globalcarehealth.com/images/logo.png",
+    "description": "GlobalCare Health coordinates cancer treatment, bone marrow transplant and heart surgery in India for patients and families from Nepal — specialist case review, indicative cost guidance, travel and arrival support, with Nepali-speaking care companions.",
+    "areaServed": ["Nepal", "India"],
+    "email": "enquiry@globalcarehealth.com",
+    "telephone": "+91-9211312666",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9211312666",
+      "contactType": "Patient Coordination",
+      "availableLanguage": ["English", "Nepali", "Hindi"]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ (shared questions only; no medical data) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can Nepali patients travel to India for cancer treatment?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Nepali citizens do not need a visa to enter India for medical treatment. GlobalCare can assist with the medical coordination and travel-support process."}},
+      {"@type": "Question", "name": "How can I get my cancer reports reviewed in India?", "acceptedAnswer": {"@type": "Answer", "text": "You can share your available medical reports with GlobalCare. Our team can coordinate the case with an appropriate specialist or hospital and help you understand the next steps."}},
+      {"@type": "Question", "name": "How much does cancer treatment cost in India?", "acceptedAnswer": {"@type": "Answer", "text": "Treatment costs vary depending on the cancer type, stage, treatment protocol, hospital and patient requirements. GlobalCare can help coordinate an indicative treatment estimate based on the patient's case."}},
+      {"@type": "Question", "name": "Which is the best cancer hospital in India?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single best hospital for every cancer patient. Hospital selection depends on the diagnosis, stage, treatment requirement, specialist expertise and other individual factors."}},
+      {"@type": "Question", "name": "Can I speak to a specialist before travelling to India?", "acceptedAnswer": {"@type": "Answer", "text": "Depending on the case and hospital, consultation and medical opinion options may be available before travel."}},
+      {"@type": "Question", "name": "Can my family member travel with me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A family member or attendant can travel with you; no visa is required for Nepali citizens entering India."}},
+      {"@type": "Question", "name": "Do I need to travel to India just to get an opinion?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Depending on the case and hospital, remote review or consultation may be possible. Our team can advise you on the available options."}},
+      {"@type": "Question", "name": "Can I get help in Nepali?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. GlobalCare can provide Nepali-speaking coordination for patients and families from Nepal, subject to coordinator availability."}},
+      {"@type": "Question", "name": "How long does cancer treatment in India take?", "acceptedAnswer": {"@type": "Answer", "text": "Treatment duration varies significantly depending on the diagnosis and treatment plan. Your treating specialist can provide a more specific estimate after reviewing your case."}},
+      {"@type": "Question", "name": "Can GlobalCare help with travel and accommodation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Once you decide to proceed, GlobalCare can assist with aspects of the international patient journey, including appointments, travel and accommodation coordination."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <a href="#hero" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+  <!-- ============================================================
+       HEADER — logo · nav · language toggle · WhatsApp · primary CTA (1 of 4 CTAs)
+       ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar navbar-expand-xl" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#hero" aria-label="GlobalCare Health home">
+          <img src="images/logo-transparent.png" alt="GlobalCare Health" class="brand-logo" width="911" height="274">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-xl-auto mb-3 mb-xl-0">
+            <li class="nav-item"><a class="nav-link" href="#who-for">Who It's For</a></li>
+            <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+            <li class="nav-item"><a class="nav-link" href="#treatment-areas">Cases We Coordinate</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hospitals">Hospitals</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cost">Cost</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faqs">FAQ</a></li>
+          </ul>
+
+          <div class="header-cta d-flex align-items-center gap-2">
+            <!-- Nepali / English (Google Translate, Nepali + English only) -->
+            <div class="lang-toggle" id="langToggle" aria-label="Language">
+              <button type="button" class="lang-btn active" data-lang="en">English</button>
+              <button type="button" class="lang-btn" data-lang="ne" lang="ne">नेपाली</button>
+              <div id="google_translate_element" class="visually-hidden"></div>
+            </div>
+            <a class="btn btn-whatsapp js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="d-none d-xl-inline ms-2">WhatsApp</span>
+            </a>
+            <a class="btn btn-primary-cta js-cta-label" href="#share-reports">Share Medical Reports</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <!-- ============================================================
+       SECTION 1 — HERO  (headline · subheading · CTA · reply promise · numbers · chips | the ONE form)
+       ============================================================ -->
+  <section class="hero hero-banner" id="hero">
+    <div class="hero-deco hero-deco-1" aria-hidden="true"></div>
+    <div class="hero-deco hero-deco-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <!-- LEFT -->
+        <div class="col-lg-7 hero-content" data-animate="fade-up">
+          <div class="route-badge" aria-label="For patients and families in Nepal">
+            <span class="flag" title="Nepal">🇳🇵</span>
+            <span class="route-label">For patients and families in Nepal</span>
+            <span class="route-arrow"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
+            <span class="flag" title="India">🇮🇳</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="v-oncology">Cancer Treatment in India — Know Your Options Before You Travel</span>
+            <span class="v-bmt">Understand Your Bone Marrow Transplant Options in India — Before You Travel</span>
+            <span class="v-cardiac">Understand Your Heart Surgery Options in India — Before You Travel</span>
+          </h1>
+
+          <p class="hero-subtitle v-oncology">
+            Get your cancer case reviewed and understand your treatment options, appropriate hospitals, and indicative
+            costs in India before making your travel plans. Share your medical reports with GlobalCare Health — our
+            patient coordination team will connect your case with the appropriate specialist/hospital and guide you
+            through the next steps.
+          </p>
+          <p class="hero-subtitle v-bmt">
+            Share your medical reports and GlobalCare Health will coordinate a review with an appropriate haematology/BMT
+            team in India — so you can understand transplant options, hospital and specialist recommendations, an
+            indicative treatment estimate, and the next steps before planning travel.
+          </p>
+          <p class="hero-subtitle v-cardiac">
+            If heart surgery or an advanced cardiac procedure has been recommended, share your reports so GlobalCare Health
+            can coordinate an appropriate cardiac specialist/hospital review in India, along with an indicative treatment
+            estimate and next steps before travel.
+          </p>
+
+          <div class="hero-cta d-flex flex-wrap align-items-center gap-3">
+            <a class="btn btn-primary-cta btn-lg js-cta-label" href="#share-reports">
+              <i class="fa-solid fa-file-medical me-2" aria-hidden="true"></i>Share Medical Reports
+            </a>
+            <!-- WhatsApp-first option (secondary): pre-filled message per specialty -->
+            <a class="btn btn-outline-cta btn-lg js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i>Send reports on WhatsApp
+            </a>
+          </div>
+
+          <!-- Below-CTA lines -->
+          <p class="hero-note v-oncology"><i class="fa-solid fa-circle-check me-2" aria-hidden="true"></i>No decision required today — a case review comes first.</p>
+          <p class="hero-note v-bmt"><i class="fa-solid fa-dna me-2" aria-hidden="true"></i>Already have HLA or donor-related reports? You can upload those too.</p>
+          <p class="hero-note v-cardiac"><i class="fa-solid fa-heart-pulse me-2" aria-hidden="true"></i>You can upload your angiogram, echocardiogram, cardiologist recommendation, discharge summary or other available cardiac reports.</p>
+          <!-- [GCH TO CONFIRM] reply-time promise (24 hours on WhatsApp) before launch -->
+          <p class="hero-note"><i class="fa-solid fa-clock me-2" aria-hidden="true"></i>A Nepali-speaking care companion replies within 24 hours on WhatsApp. <strong>Free for patients</strong> — no fee for case review or coordination.</p>
+
+          <!-- Four big numbers (from the GlobalCare website) — [GCH TO CONFIRM] figures are current -->
+          <ul class="hero-numbers list-unstyled">
+            <li><strong>128+</strong><span>Countries served</span></li>
+            <li><strong>150+</strong><span>Hospital network</span></li>
+            <li><strong>7,500+</strong><span>Treatment plans shared monthly</span></li>
+            <li><strong>3,100+</strong><span>Patients facilitated monthly</span></li>
+          </ul>
+
+          <!-- Service chips with real icons -->
+          <!-- Trust strip (SEO doc): 5 items -->
+          <div class="hero-tiles">
+            <div class="hero-tile"><span class="hero-tile-ico"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span><div><strong>Specialist &amp; Hospital Matching</strong><span>Reports matched to the right hospital</span></div></div>
+            <div class="hero-tile"><span class="hero-tile-ico"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span><div><strong>Indicative Treatment Costs</strong><span>Written estimate for your case</span></div></div>
+            <div class="hero-tile"><span class="hero-tile-ico"><i class="fa-solid fa-language" aria-hidden="true"></i></span><div><strong>Nepali-Speaking Support</strong><span>One care companion at every step</span></div></div>
+            <!-- NEPAL: visa not required for Nepali citizens — chip commented out
+            <div class="hero-tile"><span class="hero-tile-ico"><i class="fa-solid fa-passport" aria-hidden="true"></i></span><div><strong>Medical Visa &amp; Travel Guidance</strong><span>Visa Invitation Letter (VIL), medical visa, arrival</span></div></div>
+            -->
+            <div class="hero-tile"><span class="hero-tile-ico"><i class="fa-solid fa-hands-holding-child" aria-hidden="true"></i></span><div><strong>End-to-End Patient Coordination</strong><span>From first message to post-treatment follow-up</span></div></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: THE ONE FORM (two steps) -->
+        <div class="col-lg-5 hero-form-col" data-animate="fade-up" data-animate-delay="150">
+          <div class="hero-flip" id="heroFlip" data-flip-delay="4000">
+            <!-- NEPAL: front "page" — a photo is shown first, then the page turns like a notebook page
+                 (~4 s in total, or on click / CTA click) to reveal the form underneath.
+                 Replace the photo with the Nepal hero image when it arrives. -->
+            <div class="hero-flip-page" role="button" tabindex="0" aria-label="Open the case review form">
+              <img src="images/hero-doctor.jpg?v=2" alt="A patient and family with the treating oncologist and a GlobalCare coordinator at the hospital in India" width="900" height="1350" />
+              <div class="hero-flip-caption">
+                <strong>From Nepal to the right specialist in India</strong>
+                <span>Your case reviewed by the treating doctor, with a care companion beside you at every step.</span>
+                <span class="hero-flip-hint"><i class="fa-solid fa-file-medical" aria-hidden="true"></i>Share your reports — the form opens in a moment</span>
+              </div>
+            </div>
+          <div class="hero-form-card" id="share-reports">
+            <div class="hero-form-head">
+              <h2 class="hero-form-title js-form-title">Share Your Medical Reports</h2>
+              <span class="form-step-badge" id="formStepBadge">Step 1 of 2</span>
+            </div>
+            <p class="hero-form-sub js-form-sub">Tell us about the case. A Nepali-speaking care companion replies within 24 hours on WhatsApp.</p>
+
+            <!-- NOTE: connect to the CRM / lead endpoint (see script.js → submitLead). No budget question by design. -->
+            <form id="caseForm" action="lead.php" method="post" enctype="multipart/form-data" data-endpoint="lead.php" novalidate>
+              <input type="hidden" name="specialty_variant" id="specialtyVariant" value="oncology" />
+              <!-- Honeypot (spam bots fill it; real visitors never see it) -->
+              <div class="hp-field" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off" /></div>
+
+              <!-- ===== STEP 1: about the case (no typing) ===== -->
+              <fieldset class="form-step" data-step="1">
+                <div class="mb-2">
+                  <label for="specialty" class="form-label">Specialty *</label>
+                  <select class="form-select" id="specialty" name="specialty" required>
+                    <option value="oncology">Cancer / Oncology</option>
+                    <option value="bmt">Bone Marrow Transplant / Blood Cancer</option>
+                    <option value="cardiac">Heart Surgery / Cardiac</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label for="whoFor" class="form-label">Who is this for? *</label>
+                  <select class="form-select" id="whoFor" name="whoFor" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Myself</option><option>My parent</option><option>My spouse</option><option>My child</option><option>My sibling</option><option>Another family member</option>
+                  </select>
+                  <div class="invalid-feedback">Please tell us who this is for.</div>
+                </div>
+
+                <!-- Diagnosis / procedure — one select per specialty (inactive ones are disabled by script.js) -->
+                <div class="mb-2 dx-field" data-dx="oncology">
+                  <label for="dxOncology" class="form-label">Cancer type / diagnosis area *</label>
+                  <select class="form-select" id="dxOncology" name="diagnosis" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Breast</option><option>Prostate</option><option>Lung</option><option>Colorectal</option>
+                    <option>Blood (Leukaemia/Lymphoma)</option><option>Gynaecological</option><option>Other</option>
+                    <option>Not yet diagnosed — still investigating</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a cancer type.</div>
+                </div>
+                <div class="mb-2 dx-field" data-dx="bmt">
+                  <label for="dxBmt" class="form-label">Diagnosis / BMT situation *</label>
+                  <select class="form-select" id="dxBmt" name="diagnosis" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Leukaemia</option><option>Lymphoma</option><option>Multiple myeloma</option><option>Aplastic anaemia</option>
+                    <option>Thalassaemia / sickle cell</option><option>BMT / stem cell transplant recommended</option>
+                    <option>Transplant opinion already received</option><option>HLA / donor evaluation started</option><option>Other blood disorder</option>
+                  </select>
+                  <div class="invalid-feedback">Please select the diagnosis or BMT situation.</div>
+                </div>
+                <div class="mb-2 dx-field" data-dx="cardiac">
+                  <label for="dxCardiac" class="form-label">Recommended procedure / condition *</label>
+                  <select class="form-select" id="dxCardiac" name="diagnosis" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>CABG / heart bypass surgery</option><option>Valve repair or replacement</option><option>Angioplasty / stent</option>
+                    <option>Complex or redo cardiac surgery</option><option>Congenital / paediatric heart condition</option>
+                    <option>Heart failure / other cardiac condition</option><option>Not sure — cardiologist has advised surgery</option>
+                  </select>
+                  <div class="invalid-feedback">Please select the procedure or condition.</div>
+                </div>
+
+                <div class="row g-2 mb-2">
+                  <div class="col-6">
+                    <label for="reportsDone" class="form-label">Medical reports done? *</label>
+                    <select class="form-select" id="reportsDone" name="reportsDone" required>
+                      <option value="" selected disabled>Select</option>
+                      <option>Yes, I have them</option><option>Some, not all</option><option>Not yet</option><option>Not sure</option>
+                    </select>
+                    <div class="invalid-feedback">Required.</div>
+                  </div>
+                  <div class="col-6">
+                    <label for="timeline" class="form-label">Hoping to start *</label>
+                    <select class="form-select" id="timeline" name="timeline" required>
+                      <option value="" selected disabled>Select</option>
+                      <option>As soon as possible</option><option>Within 1 month</option><option>Within 1–3 months</option><option>Still exploring options</option>
+                    </select>
+                    <div class="invalid-feedback">Required.</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="indiaIntent" class="form-label">Are you currently considering travelling to India for treatment? *</label>
+                  <select class="form-select" id="indiaIntent" name="indiaIntent" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Yes — actively planning</option>
+                    <option>Yes — comparing treatment options first</option>
+                    <option>Possibly — depending on the treatment plan / cost</option>
+                    <option>Not currently</option>
+                  </select>
+                  <div class="invalid-feedback">Please select one.</div>
+                </div>
+                <button type="button" class="btn btn-primary-cta w-100" id="formNext">Continue <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></button>
+                <p class="form-error" id="formError" hidden><i class="fa-solid fa-circle-exclamation me-1" aria-hidden="true"></i>Please complete the highlighted fields.</p>
+              </fieldset>
+
+              <!-- ===== STEP 2: contact + reports ===== -->
+              <fieldset class="form-step" data-step="2" hidden>
+                <div class="row g-2 mb-2">
+                  <div class="col-8">
+                    <label for="patientName" class="form-label">Patient name *</label>
+                    <input type="text" class="form-control" id="patientName" name="patientName" required placeholder="Full name" />
+                    <div class="invalid-feedback">Please enter the patient's name.</div>
+                  </div>
+                  <div class="col-4">
+                    <label for="age" class="form-label">Age *</label>
+                    <input type="number" class="form-control" id="age" name="age" inputmode="numeric" min="0" max="120" required placeholder="Age" />
+                    <div class="invalid-feedback">Required.</div>
+                  </div>
+                </div>
+                <div class="row g-2 mb-2">
+                  <div class="col-5">
+                    <label for="city" class="form-label">City *</label>
+                    <input type="text" class="form-control" id="city" name="city" required placeholder="e.g. Kathmandu" />
+                    <div class="invalid-feedback">Required.</div>
+                  </div>
+                  <div class="col-7">
+                    <label for="whatsapp" class="form-label">WhatsApp number *</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><span class="flag me-1" aria-hidden="true">🇳🇵</span>+977</span>
+                      <input type="tel" class="form-control" id="whatsapp" name="whatsapp" inputmode="tel" required placeholder="98XXXXXXXX" pattern="[0-9 \-]{8,14}" />
+                      <div class="invalid-feedback">Enter a valid number.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email <span class="form-hint">(optional)</span></label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="mb-2">
+                  <label for="reports" class="form-label">Upload Available Medical Reports</label>
+                  <input type="file" class="form-control form-control-sm" id="reports" name="reports[]" multiple accept=".pdf,.jpg,.jpeg,.png" />
+                  <small class="form-hint d-block mt-1"><strong>Recommended</strong> — reports help us route your case to the appropriate specialist. Don't have them with you? You can submit now and share them with your care companion later. PDF, JPG or PNG; photos of printed reports are fine.</small>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="waOptIn" name="whatsappOptIn" value="yes" checked />
+                  <label class="form-check-label" for="waOptIn">Send me updates about my case on WhatsApp</label>
+                </div>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-ghost-cta" id="formBack" aria-label="Back to step 1"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                  <button type="submit" class="btn btn-primary-cta flex-fill js-cta-label"><i class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Share Medical Reports</button>
+                </div>
+                <p class="hero-form-privacy mb-0"><i class="fa-solid fa-lock me-1" aria-hidden="true"></i>Your reports are seen only by the reviewing specialist and your care companion, and used only to coordinate your case. <a href="https://www.globalcarehealth.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
+              </fieldset>
+            </form>
+
+            <!-- ===== THANK-YOU SCREEN (shown after submit) ===== -->
+            <div class="form-thanks" id="formThanks" hidden>
+              <span class="thanks-ico"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+              <h3>Thank you, <span id="thanksName">we've received the case</span>.</h3>
+              <p>A Nepali-speaking care companion will connect with you on WhatsApp within 24 hours to confirm receipt and explain the next step.</p>
+              <p class="small" id="thanksNoReports" hidden>No reports attached yet? No problem — your care companion will help you share them.</p>
+              <a class="btn btn-whatsapp js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i>Message us on WhatsApp now</a>
+            </div>
+          </div>
+          </div><!-- /.hero-flip -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hospital network strip (credibility before scrolling). [GCH TO CONFIRM] use approved hospital logos here when supplied. -->
+  <div class="hospital-strip" aria-label="Hospitals GlobalCare coordinates with in India">
+    <div class="container">
+      <span class="hospital-strip-label">We coordinate with</span>
+      <ul class="list-unstyled">
+        <li>Apollo Hospitals</li><li>Fortis Healthcare</li><li>Max Healthcare</li><li>Medanta</li>
+        <li>Manipal Hospitals</li><li>Artemis Hospitals</li><li>Amrita Hospital</li><li>Marengo Asia Hospitals</li><li>HCG Cancer Centre</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Navy strip: call / WhatsApp / email (secondary channels) -->
+  <div class="container">
+    <div class="appointment-strip" data-animate="fade-up">
+      <p class="mb-0"><b>To Start Your Case Review</b></p>
+      <a href="tel:+919211312666"><span class="strip-ico"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>Call Us <b>+91 92113 12666</b></a>
+      <a class="js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener"><span class="strip-ico strip-ico-wa"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>WhatsApp Us</a>
+      <a href="mailto:enquiry@globalcarehealth.com"><span class="strip-ico"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>enquiry@globalcarehealth.com</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 2 — WHY GLOBALCARE? (trust section, SEO H2)
+       ============================================================ -->
+  <section class="section" id="why-globalcare">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">Why GlobalCare?</span>
+        <h2 class="section-title">A Trusted Care Partner for Your Journey to India</h2>
+        <p class="section-lead">Choosing <span class="v-oncology">cancer treatment</span><span class="v-bmt">a bone marrow transplant</span><span class="v-cardiac">heart surgery</span> in another country can be overwhelming. You need clarity about where to go, which specialist to consult, what treatment may be appropriate, and what it may cost.</p>
+        <p class="section-lead">GlobalCare Health helps simplify this journey for international patients by coordinating medical opinions, hospital options, treatment estimates and on-ground support in India.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-animate="fade-up"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><h3 class="feature-title">Understand Your Options</h3><p>Get clarity on potential treatment pathways based on your medical reports.</p></div></div>
+        <div class="col-md-6 col-lg-3" data-animate="fade-up" data-animate-delay="80"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></span><h3 class="feature-title">Find the Right Hospital</h3><p>We help identify appropriate hospitals and specialists based on your case and requirements.</p></div></div>
+        <div class="col-md-6 col-lg-3" data-animate="fade-up" data-animate-delay="160"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span><h3 class="feature-title">Know the Indicative Cost</h3><p>Understand the expected treatment cost before making travel arrangements.</p></div></div>
+        <div class="col-md-6 col-lg-3" data-animate="fade-up" data-animate-delay="240"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-hands-holding-child" aria-hidden="true"></i></span><h3 class="feature-title">Get Support Throughout</h3><p>From medical coordination to hospital admission, travel and on-ground assistance.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PATIENT PHOTO SLIDER (under Why GlobalCare) — real patients and families, shared with consent.
+       Uniform square cards: the whole photo is shown (nobody cropped) over a blurred copy of itself.
+       To add a photo: save it in images/patients/ and copy one <figure class="photo-card slider-item">.
+       ============================================================ -->
+  <section class="section section-alt" id="patient-photo-story">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">Our Patients</span>
+        <h2 class="section-title">Real Patients, Real Journeys</h2>
+        <p class="section-lead">Moments from patients and families GlobalCare Health has supported in India — from airport arrival to the hospital and back home. Shared with their consent.</p>
+      </div>
+      <div class="hospital-slider photo-slider" id="photoSlider" data-animate="fade-up" data-autoplay="4000">
+        <button class="slider-btn slider-prev" type="button" aria-label="Previous photos"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="slider-track" tabindex="0" aria-label="Patient photos, scroll horizontally">
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-4.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-4.jpg" alt="GlobalCare care companion receiving a mother and her son at Delhi airport" loading="lazy" width="1000" height="750" /></div><figcaption>Airport pickup by our care companion</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-2.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-2.jpg" alt="Patient in a wheelchair with family and a GlobalCare team member at the airport" loading="lazy" width="750" height="1000" /></div><figcaption>Wheelchair and arrival assistance</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-7.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-7.jpg" alt="Patient with doctors and the hospital care team celebrating with a cake" loading="lazy" width="651" height="476" /></div><figcaption>Celebrating with a patient and the hospital care team</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-6.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-6.jpg" alt="A young patient and his father with a GlobalCare team member" loading="lazy" width="750" height="1000" /></div><figcaption>With a young patient and his father</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-1.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-1.jpg" alt="Patient and family seated at the GlobalCare office" loading="lazy" width="790" height="587" /></div><figcaption>A patient and family at our office</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-5.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-5.jpg" alt="Patient giving a thumbs up next to a GlobalCare care companion after treatment" loading="lazy" width="342" height="471" /></div><figcaption>Visiting a patient after treatment</figcaption></figure>
+          <figure class="photo-card slider-item"><div class="photo-frame"><img class="photo-bg" src="images/patients/story-3.jpg" alt="" aria-hidden="true" loading="lazy" /><img src="images/patients/story-3.jpg" alt="GlobalCare team counselling patients at a consultation desk" loading="lazy" width="750" height="1000" /></div><figcaption>Counselling patients and families in person</figcaption></figure>
+        </div>
+        <button class="slider-btn slider-next" type="button" aria-label="Next photos"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="slider-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — WHO THIS SERVICE IS FOR (per specialty)
+       ============================================================ -->
+  <section class="section" id="who-for">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">Who This Is For</span>
+        <h2 class="section-title">Is This the Right Time to Reach Out?</h2>
+        <p class="section-lead">Built for patients and families seriously considering treatment in India — wherever you are in that decision.</p>
+      </div>
+
+      <div class="who-list" data-animate="fade-up">
+        <p class="who-intro text-center">This may be the right step for you if:</p>
+
+        <!-- Oncology -->
+        <div class="row v-oncology">
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You or a family member has a new cancer diagnosis</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>A biopsy, scan or blood report is available or on the way</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Surgery, chemotherapy, radiation or another treatment has been recommended</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You're exploring options after treatment has already started in Nepal</span></li>
+          </ul></div>
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>The cancer has returned after earlier treatment</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You want a specialist's view before deciding on the next step</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You're comparing cancer hospitals in India and want clearer information</span></li>
+          </ul></div>
+        </div>
+
+        <!-- BMT -->
+        <div class="row v-bmt">
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>A bone marrow / stem cell transplant (BMT) has been recommended</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>The diagnosis is leukaemia, lymphoma or multiple myeloma</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>The diagnosis is aplastic anaemia or another serious blood disorder</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>A transplant opinion has already been received and you want a second view</span></li>
+          </ul></div>
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>HLA typing or donor evaluation has started</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You are considering a bone marrow transplant in India and want to understand cost and hospitals</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You want a haematology/BMT team to review the case before planning travel</span></li>
+          </ul></div>
+        </div>
+
+        <!-- Cardiac -->
+        <div class="row v-cardiac">
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>CABG / heart bypass surgery has been recommended</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Valve repair or valve replacement has been recommended</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>A complex cardiac procedure is being considered</span></li>
+          </ul></div>
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>An angiogram or echo is available for specialist review</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You are comparing heart surgery options and cardiac hospitals in India</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>You want a cardiac surgeon's view and an indicative cost before travel</span></li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="who-note" data-animate="fade-up">
+        <i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>
+        Not sure which specialist or treatment pathway is relevant? If you have a diagnosis, medical recommendation or
+        reports and are considering treatment in India, share the case and our care companion can guide you on the
+        appropriate next step.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 — HOW IT WORKS (shared)
+       ============================================================ -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="section-title">Your Path to Treatment in India, Step by Step</h2>
+        <p class="section-lead">A clear process from your first message to treatment and post-operation care.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-animate="fade-up"><span class="timeline-num">01</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-file-medical" aria-hidden="true"></i></span><h3>Share Your Reports</h3><p>Fill the short form at the top of this page and attach your reports in step 2 of the form — or simply send them on WhatsApp.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="60"><span class="timeline-num">02</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-hospital-user" aria-hidden="true"></i></span><h3>Specialist &amp; Hospital Review</h3><p>Your case is routed to an appropriate specialist and hospital in India.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="120"><span class="timeline-num">03</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span><h3>Receive Your Treatment Plan</h3><p>The specialist's assessment and recommended approach, explained in Nepali.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="180"><span class="timeline-num">04</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span><h3>Written Indicative Estimate</h3><p>Know the indicative cost and your hospital/specialist options.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="240"><span class="timeline-num">05</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-video" aria-hidden="true"></i></span><h3>Doctor Discussion</h3><p>Speak with the specialist or care team before deciding.<sup>*</sup></p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="300"><span class="timeline-num">06</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-passport" aria-hidden="true"></i></span><h3>Travel &amp; Arrival</h3><p>Travel guidance and airport pickup. No visa is required for Nepali citizens entering India.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="360"><span class="timeline-num">07</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-bed-pulse" aria-hidden="true"></i></span><h3>Treatment</h3><p>Admission and treatment at the selected hospital, with your care companion coordinating with the medical team on the ground.</p></div></div>
+        <div class="timeline-item" data-animate="fade-up" data-animate-delay="420"><span class="timeline-num">08</span><div class="timeline-content"><span class="timeline-icon"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i></span><h3>Post-Operation Care</h3><p>Discharge guidance, follow-up consultations with the treating team and report reviews after you return to Nepal.</p></div></div>
+      </div>
+      <p class="fine-print text-center" data-animate="fade-up"><sup>*</sup>Doctor discussions are arranged where appropriate for the case; all clinical decisions rest with the treating hospital and specialist.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — KNOW BEFORE YOU GO (shared)
+       ============================================================ -->
+  <section class="section" id="know-before">
+    <div class="container">
+      <!-- Oncology: SEO copy "Why get your case reviewed before travelling?" -->
+      <div class="row g-5 align-items-center v-oncology">
+        <div class="col-lg-5" data-animate="fade-up">
+          <span class="eyebrow">Before You Travel</span>
+          <h2 class="section-title">Why Get Your Case Reviewed Before Travelling to India?</h2>
+          <p class="section-lead">Travelling internationally for cancer treatment involves significant time, money and emotional effort. A case review before travelling can help you:</p>
+          <p class="know-highlight"><i class="fa-solid fa-plane-circle-check me-2" aria-hidden="true"></i>Make an informed decision before you book your ticket.</p>
+        </div>
+        <div class="col-lg-7" data-animate="fade-up" data-animate-delay="120">
+          <div class="know-panel">
+            <ul class="know-list list-unstyled mb-0">
+              <li><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Understand potential treatment options</span></li>
+              <li><i class="fa-solid fa-user-doctor" aria-hidden="true"></i><span>Identify appropriate specialists</span></li>
+              <li><i class="fa-solid fa-hospital" aria-hidden="true"></i><span>Compare suitable hospitals</span></li>
+              <li><i class="fa-solid fa-file-invoice" aria-hidden="true"></i><span>Understand indicative treatment costs</span></li>
+              <li><i class="fa-solid fa-folder-open" aria-hidden="true"></i><span>Know what additional reports may be required</span></li>
+              <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Plan your medical appointments</span></li>
+              <li><i class="fa-solid fa-plane" aria-hidden="true"></i><span>Prepare for your travel and stay</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMT / Cardiac: Know Before You Go -->
+      <div class="row g-5 align-items-center v-not-oncology">
+        <div class="col-lg-5" data-animate="fade-up">
+          <span class="eyebrow">Before You Travel</span>
+          <h2 class="section-title">Know Before You Go</h2>
+          <p class="section-lead">After the specialist's review, you can understand:</p>
+          <p class="know-closing"><i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>Based on the reports you share; subject to the specialist's and hospital's own clinical review.</p>
+        </div>
+        <div class="col-lg-7" data-animate="fade-up" data-animate-delay="120">
+          <div class="know-panel">
+            <ul class="know-list list-unstyled mb-0">
+              <li><i class="fa-solid fa-user-doctor" aria-hidden="true"></i><span>The specialist's treatment recommendation for your case</span></li>
+              <li><i class="fa-solid fa-hospital" aria-hidden="true"></i><span>Which hospital and specialist are appropriate</span></li>
+              <li><i class="fa-solid fa-file-invoice" aria-hidden="true"></i><span>A written indicative cost for the recommended treatment</span></li>
+              <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Expected treatment duration and length of stay in India</span></li>
+              <li><i class="fa-solid fa-folder-open" aria-hidden="true"></i><span>Which documents and reports you'll need going forward</span></li>
+              <li><i class="fa-solid fa-route" aria-hidden="true"></i><span>What the next step looks like if you decide to proceed</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — CASES WE COORDINATE (per specialty) + helpful reports   (CTA 2 of 4)
+       ============================================================ -->
+  <section class="section section-alt" id="treatment-areas">
+    <div class="container">
+      <!-- Oncology (SEO copy): treatment options + cancer types -->
+      <div class="v-oncology">
+        <div class="section-head text-center" data-animate="fade-up">
+          <span class="eyebrow">Cancer Treatment in India</span>
+          <h2 class="section-title">Cancer Treatment Options Available in India Through Our Hospital Network</h2>
+          <p class="section-lead">India has a wide range of specialised cancer-care capabilities, with multidisciplinary teams and advanced treatment options available across established hospitals. Depending on the diagnosis and clinical requirements, treatment may include:</p>
+        </div>
+        <div class="row g-3 treatment-grid justify-content-center">
+          <div class="col-md-6 col-lg-4" data-animate="fade-up"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-bed-pulse" aria-hidden="true"></i></span><h3 class="feature-title">Cancer Surgery</h3><p>Surgical treatment for cancers where removal of the tumour or affected tissue is recommended.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="60"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-syringe" aria-hidden="true"></i></span><h3 class="feature-title">Chemotherapy</h3><p>Drug-based treatment used for different types and stages of cancer.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="120"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-radiation" aria-hidden="true"></i></span><h3 class="feature-title">Radiation Therapy</h3><p>Advanced radiation techniques used to target cancer cells while aiming to protect surrounding healthy tissue.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="180"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></span><h3 class="feature-title">Immunotherapy</h3><p>Treatment that works with the body's immune system to help fight certain cancers.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="240"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span><h3 class="feature-title">Targeted Therapy</h3><p>Medicines designed to target specific characteristics of cancer cells.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="300"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-dna" aria-hidden="true"></i></span><h3 class="feature-title">Bone Marrow / Stem Cell Transplant</h3><p>Specialised treatment for selected blood cancers and other conditions requiring stem-cell transplantation.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-animate="fade-up" data-animate-delay="360"><div class="feature-card h-100"><span class="feature-icon"><i class="fa-solid fa-vial-virus" aria-hidden="true"></i></span><h3 class="feature-title">CAR T-Cell Therapy</h3><p>A cellular immunotherapy that re-engineers the patient's own T-cells, used for selected blood cancers at specialised centres.</p></div></div>
+        </div>
+        <p class="fine-print text-center" data-animate="fade-up">Treatment options depend on the patient's diagnosis, cancer type, stage, overall health and specialist assessment. Final treatment decisions are made by the treating medical team.</p>
+
+        <div class="section-head text-center mt-5" data-animate="fade-up">
+          <span class="eyebrow">Cancer Types</span>
+          <h2 class="section-title">Cancer Care Across Multiple Specialties</h2>
+        </div>
+        <div class="text-center" data-animate="fade-up">
+          <div class="pill-row">
+            <span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Breast Cancer</span><span class="pill"><i class="fa-solid fa-lungs" aria-hidden="true"></i>Lung Cancer</span>
+            <span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Blood Cancer</span><span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Liver Cancer</span>
+            <span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Pancreatic Cancer</span><span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Colorectal Cancer</span>
+            <span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Prostate Cancer</span><span class="pill"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Head &amp; Neck Cancer</span>
+            <span class="pill"><i class="fa-solid fa-venus" aria-hidden="true"></i>Gynecological Cancer</span><span class="pill"><i class="fa-solid fa-child" aria-hidden="true"></i>Pediatric Cancer</span>
+          </div>
+        </div>
+        <div class="reports-box" data-animate="fade-up">
+          <strong><i class="fa-solid fa-folder-open me-2" aria-hidden="true"></i>Helpful cancer reports to share:</strong>
+          biopsy / histopathology, scan reports (CT, MRI, PET), blood tests, discharge summary and any previous treatment summary. Don't see your diagnosis above? Share the reports — GlobalCare coordinates most cancer types.
+        </div>
+      </div>
+
+      <!-- BMT -->
+      <div class="v-bmt">
+        <div class="section-head text-center" data-animate="fade-up">
+          <span class="eyebrow">Bone Marrow Transplant in India</span>
+          <h2 class="section-title">BMT &amp; Haematology Cases We Help Coordinate</h2>
+          <p class="section-lead">From blood cancer treatment to allogeneic and autologous bone marrow transplant in India — routed to an appropriate haematology/BMT team.</p>
+        </div>
+        <div class="text-center" data-animate="fade-up">
+          <p class="pill-group-title">Cases we coordinate</p>
+          <div class="pill-row">
+            <span class="pill"><i class="fa-solid fa-dna" aria-hidden="true"></i>BMT / Stem Cell Transplant Recommended</span><span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Leukaemia</span>
+            <span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Lymphoma</span><span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Multiple Myeloma</span>
+            <span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Aplastic Anaemia</span><span class="pill"><i class="fa-solid fa-droplet" aria-hidden="true"></i>Thalassaemia</span><span class="pill"><i class="fa-solid fa-vial-virus" aria-hidden="true"></i>CAR T-Cell Therapy</span>
+            <span class="pill"><i class="fa-solid fa-user-check" aria-hidden="true"></i>Transplant Opinion Already Received</span><span class="pill"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i>HLA / Donor Evaluation Started</span>
+          </div>
+        </div>
+        <div class="reports-box" data-animate="fade-up">
+          <strong><i class="fa-solid fa-folder-open me-2" aria-hidden="true"></i>Helpful reports for a BMT review:</strong>
+          CBC / blood reports, bone marrow biopsy, flow cytometry, histopathology, previous treatment summary, HLA typing (if available) and donor-related reports (if available).
+        </div>
+      </div>
+
+      <!-- Cardiac -->
+      <div class="v-cardiac">
+        <div class="section-head text-center" data-animate="fade-up">
+          <span class="eyebrow">Heart Surgery in India</span>
+          <h2 class="section-title">Cardiac Cases We Help Coordinate</h2>
+          <p class="section-lead">From heart bypass surgery to valve replacement in India — routed to an appropriate cardiac surgeon and cardiac hospital for your case.</p>
+        </div>
+        <div class="text-center" data-animate="fade-up">
+          <p class="pill-group-title">Procedures</p>
+          <div class="pill-row">
+            <span class="pill"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>CABG / Heart Bypass Surgery</span><span class="pill"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i>Valve Repair / Replacement</span>
+            <span class="pill"><i class="fa-solid fa-heart-circle-plus" aria-hidden="true"></i>Complex Cardiac Surgery</span><span class="pill"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i>Interventional Cardiology (where applicable)</span>
+          </div>
+        </div>
+        <div class="reports-box" data-animate="fade-up">
+          <strong><i class="fa-solid fa-folder-open me-2" aria-hidden="true"></i>Helpful cardiac reports to share:</strong>
+          angiogram, echocardiogram (echo), ECG, cardiologist recommendation, discharge summary and recent blood tests.
+        </div>
+      </div>
+
+      <div class="text-center mt-4" data-animate="fade-up">
+        <a class="btn btn-primary-cta btn-lg js-cta-label" href="#share-reports">Share Medical Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 — HOSPITALS (per specialty; no stock photos)
+       Hospital list per specialty confirmed by GlobalCare (Sept 2026):
+         Oncology: Apollo, Max Saket, Manipal, Artemis, Marengo Asia
+         BMT:      Apollo, Fortis FMRI, Max Saket, Medanta, Manipal, Amrita
+         Cardiac:  Apollo, Fortis FMRI, Max Saket, Medanta, Manipal, Artemis, Marengo Asia
+       Images are the hospital photos from the GlobalCare website (img/hospitalsimg). Accreditation badges
+       (.hospital-badges) are shown only where the GlobalCare hospital page lists them;
+       [GCH TO CONFIRM] JCI / NABH / NABL for the remaining hospitals.
+       ============================================================ -->
+  <section class="section" id="hospitals">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">Hospitals &amp; Specialists</span>
+        <h2 class="section-title"><span class="v-oncology">Find the Right Cancer Hospital for Your Case</span><span class="v-not-oncology">Matched With the Right Specialist for Your Case</span></h2>
+        <p class="section-lead">
+          <span class="v-oncology">There is no single "best" cancer hospital for every patient. The right choice depends on the cancer type, stage, treatment requirement, specialist expertise, technology, estimated cost and the patient's individual circumstances. GlobalCare Health helps international patients identify appropriate hospital and specialist options based on their medical requirements.</span>
+          <span class="v-bmt">Hospitals with haematology and bone marrow transplant programmes that GlobalCare coordinates with — matched to your case after review.</span>
+          <span class="v-cardiac">Cardiac hospitals in India that GlobalCare coordinates with — your case is matched to a cardiac surgeon after your reports are reviewed.</span>
+        </p>
+      </div>
+
+      <p class="pill-group-title text-center" data-animate="fade-up">Hospitals available through our care network</p>
+      <div class="hospital-slider" id="hospitalSlider" data-animate="fade-up" data-autoplay="4500">
+        <button class="slider-btn slider-prev" type="button" aria-label="Previous hospitals"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="slider-track" tabindex="0" aria-label="Hospitals in India, scroll horizontally">
+
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Indraprastha-Apollo-Hospital-New-Delhi-India-gchh78.webp" alt="Indraprastha Apollo Hospital, New Delhi" onerror="this.onerror=null;this.src='images/hospital-1.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Indraprastha Apollo Hospital</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> New Delhi</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery · Radiation</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/indraprastha-apollo-hospital" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Fortis-Memorial-Research-Institute-Gurugram-India-gchh7.webp" alt="Fortis Memorial Research Institute, Gurugram" onerror="this.onerror=null;this.src='images/hospital-2.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Fortis Memorial Research Institute</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Gurugram</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery · Radiation</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/fortis-memorial-research-institute" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Max-Super-Speciality-Hospital-Saket-New-Delhi-India-gchh33.webp" alt="Max Super Speciality Hospital, Saket, New Delhi" onerror="this.onerror=null;this.src='images/hospital-3.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Max Super Speciality Hospital</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Saket, New Delhi</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery · Radiation</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/max-super-speciality-hospital-saket" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Medanta-Hospital-Gurugram-India-gchh85.webp" alt="Medanta – The Medicity, Gurugram" onerror="this.onerror=null;this.src='images/hospital-4.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Medanta – The Medicity</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Gurugram</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery · Radiation</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Heart surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/medanta-hospital" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Manipal-Hospital-Old-Airport-Road-Bengaluru-India-gchh51.webp" alt="Manipal Hospital, Old Airport Road, Bengaluru" onerror="this.onerror=null;this.src='images/hospital-5.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Manipal Hospital</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Old Airport Road, Bengaluru</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/manipal-hospital-old-airport-road" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Artemis-Hospital-Gurugram-India-gchh81.webp" alt="Artemis Hospital, Gurugram" onerror="this.onerror=null;this.src='images/hospital-6.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Artemis Hospital</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Gurugram</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <!-- Accreditation as listed on the GlobalCare website hospital page -->
+              <p class="hospital-badges"><span>JCI</span><span>NABH</span></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/artemis-hospital" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Amrita-Hospital-Faridabad-India-gchh50.webp" alt="Amrita Hospital, Faridabad" onerror="this.onerror=null;this.src='images/hospital-7.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Amrita Hospital</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Faridabad</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery</p>
+              <p class="hospital-specialties v-bmt">Haematology · Transplant programmes</p>
+              <p class="hospital-specialties v-cardiac">Cardiac surgery · Cardiology</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/amrita-hospital" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <article class="hospital-card slider-item h-oncology h-bmt h-cardiac">
+            <div class="hospital-media"><img src="images/hospitals/Marengo-Asia-Gurugram-India-gchh82.webp" alt="Marengo Asia Hospitals, Gurugram" onerror="this.onerror=null;this.src='images/hospital-8.svg'" loading="lazy" width="600" height="375" /></div>
+            <div class="hospital-body">
+              <h3>Marengo Asia Hospitals</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Gurugram</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer care</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-specialties v-cardiac">Cardiac care</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals/india/marengo-asia-gurugram" target="_blank" rel="noopener">View Hospital</a>
+            </div>
+          </article>
+          <!-- HCG (HealthCare Global) — cancer-specialist network. Photo supplied by GlobalCare; no page for it on the GlobalCare website yet. -->
+          <article class="hospital-card slider-item h-oncology h-bmt">
+            <div class="hospital-media"><img src="images/hospitals/HCG-Cancer-Centre-Bengaluru-India.webp" alt="HCG Cancer Centre, Bengaluru" loading="lazy" width="600" height="375" onerror="this.onerror=null;this.src='images/hospital-1.svg'" /></div>
+            <div class="hospital-body">
+              <h3>HCG Cancer Centre</h3>
+              <p class="hospital-city"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bengaluru &amp; other cities</p>
+              <p class="hospital-specialties v-oncology">Oncology · Cancer surgery · Radiation</p>
+              <p class="hospital-specialties v-bmt">Haematology · Bone marrow transplant</p>
+              <p class="hospital-badges"></p>
+              <a class="btn btn-sm btn-outline-cta" href="https://www.globalcarehealth.com/hospitals" target="_blank" rel="noopener">View Hospitals</a>
+            </div>
+          </article>
+
+        </div>
+        <button class="slider-btn slider-next" type="button" aria-label="Next hospitals"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="slider-dots" aria-hidden="true"></div>
+      </div>
+      <p class="hospital-more text-center" data-animate="fade-up">These are some of the hospitals in our care network. <a href="https://www.globalcarehealth.com/hospitals" target="_blank" rel="noopener">See more hospitals on our website</a> — or your care coordinator will share the options best suited to your case after reviewing your reports.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7 — COST (per specialty; three lines)   (CTA 3 of 4)
+       ============================================================ -->
+  <section class="section section-alt" id="cost">
+    <div class="container">
+      <div class="cost-card" data-animate="fade-up">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="eyebrow">Cost</span>
+            <h2 class="section-title">
+              <span class="v-oncology">How Much Does Cancer Treatment in India Cost?</span>
+              <span class="v-bmt">How Much Does Bone Marrow Transplant in India Cost?</span>
+              <span class="v-cardiac">How Much Does Heart Surgery in India Cost?</span>
+            </h2>
+            <p class="section-lead mb-3"><span class="v-oncology">Want to understand your likely treatment cost? Share your medical reports and let us help coordinate an indicative treatment estimate.</span><span class="v-not-oncology">There's no single answer — but there is a clear way to get yours.</span></p>
+
+            <div class="cost-lines">
+              <div class="cost-line">
+                <span class="cost-line-ico"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span>
+                <div>
+                  <strong>What changes the cost</strong>
+                  <p class="v-oncology">The cost of cancer treatment in India varies significantly depending on the cancer type, stage, treatment protocol, hospital, specialist and length of treatment.</p>
+                  <p class="v-bmt">The type of transplant being considered, the diagnosis and current condition, donor evaluation where applicable, the testing and treatment required, and the hospital, specialist and admission requirements.</p>
+                  <p class="v-cardiac">The recommended procedure, the cardiac findings on your angiogram and echo, previous treatment or procedures, and the hospital, specialist and admission requirements.</p>
+                </div>
+              </div>
+              <div class="cost-line">
+                <span class="cost-line-ico"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span>
+                <div><strong>What you receive</strong><p>Rather than relying on a generic price, GlobalCare helps you understand the indicative cost relevant to your individual case — a written indicative estimate after the specialist review, so you can plan with real information rather than a guess.</p></div>
+              </div>
+              <div class="cost-line">
+                <span class="cost-line-ico"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+                <div><strong>What it costs you to ask</strong><p>Nothing. Case review and coordination are free for patients. Be cautious of anyone who quotes a treatment cost without reviewing your reports first.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-primary-cta btn-lg" href="#share-reports">
+              <span class="v-oncology">Get an Indicative Cost Estimate</span>
+              <span class="v-bmt">Get an Indicative BMT Estimate</span>
+              <span class="v-cardiac">Get an Indicative Cardiac Estimate</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8 — NEPAL-SPECIFIC SUPPORT (one-line cards)
+       ============================================================ -->
+  <section class="section section-bd" id="nepal-support">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <div class="bd-flags justify-content-center"><span class="flag-lg" title="Nepal">🇳🇵</span><span class="bd-connector"><i class="fa-solid fa-plane" aria-hidden="true"></i></span><span class="flag-lg" title="India">🇮🇳</span></div>
+        <span class="eyebrow">Nepal-Specific Support</span>
+        <h2 class="section-title">Support for Patients Travelling from Nepal to India Outside the Hospital</h2>
+        <p class="section-lead">Travelling to another country for <span class="v-oncology">cancer treatment</span><span class="v-bmt">a bone marrow transplant</span><span class="v-cardiac">heart surgery</span> involves much more than finding a hospital.</p>
+        <p class="section-lead">GlobalCare Health helps patients and families from Nepal coordinate their healthcare journey in India — from understanding treatment options and hospital selection to medical appointments, travel guidance and on-ground support.</p>
+      </div>
+      <div class="who-list bd-bullets" data-animate="fade-up">
+        <div class="row">
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Nepali-speaking patient coordination</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Medical report coordination</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Specialist / hospital matching</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Appointment assistance</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Indicative treatment cost</span></li>
+          </ul></div>
+          <div class="col-md-6"><ul class="list-unstyled mb-0">
+            <!-- NEPAL: visa not required — bullet commented out
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Medical visa guidance</span></li>
+            -->
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Travel and accommodation assistance</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Hospital admission support</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>On-ground patient assistance</span></li>
+            <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Post-treatment coordination</span></li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 9 — FAQ (cost first; per-specialty questions; short answers)
+       ============================================================ -->
+  <section class="section" id="faqs">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section-title"><span class="v-oncology">Frequently Asked Questions About Cancer Treatment in India</span><span class="v-not-oncology">Common Questions</span></h2>
+      </div>
+      <div class="accordion faq-accordion" id="faqAccordion" data-animate="fade-up">
+
+        <!-- ===== ONCOLOGY: SEO FAQ (verbatim from the GlobalCare content document) ===== -->
+        <div class="v-oncology">
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq1">Can Nepali patients travel to India for cancer treatment?</button></h3>
+            <div id="ofaq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Nepali citizens do not need a visa to enter India for medical treatment. GlobalCare can assist with the medical coordination and travel-support process.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq2">How can I get my cancer reports reviewed in India?</button></h3>
+            <div id="ofaq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">You can share your available medical reports with GlobalCare. Our team can coordinate the case with an appropriate specialist or hospital and help you understand the next steps.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq3">How much does cancer treatment cost in India?</button></h3>
+            <div id="ofaq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Treatment costs vary depending on the cancer type, stage, treatment protocol, hospital and patient requirements. GlobalCare can help coordinate an indicative treatment estimate based on the patient's case.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq4">Which is the best cancer hospital in India?</button></h3>
+            <div id="ofaq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">There is no single best hospital for every cancer patient. Hospital selection depends on the diagnosis, stage, treatment requirement, specialist expertise and other individual factors.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq5">Can I speak to a specialist before travelling to India?</button></h3>
+            <div id="ofaq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Depending on the case and hospital, consultation and medical opinion options may be available before travel.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq6">Can my family member travel with me?</button></h3>
+            <div id="ofaq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. A family member or attendant can travel with you; no visa is required for Nepali citizens entering India.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq7">Do I need to travel to India just to get an opinion?</button></h3>
+            <div id="ofaq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Not necessarily. Depending on the case and hospital, remote review or consultation may be possible. Our team can advise you on the available options.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq8">Can I get help in Nepali?</button></h3>
+            <div id="ofaq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. GlobalCare can provide Nepali-speaking coordination for patients and families from Nepal, subject to coordinator availability.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq9">How long does cancer treatment in India take?</button></h3>
+            <div id="ofaq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Treatment duration varies significantly depending on the diagnosis and treatment plan. Your treating specialist can provide a more specific estimate after reviewing your case.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ofaq10">Can GlobalCare help with travel and accommodation?</button></h3>
+            <div id="ofaq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Once you decide to proceed, GlobalCare can assist with aspects of the international patient journey, including appointments, travel and accommodation coordination.</div></div>
+          </div>
+        </div>
+
+        <!-- ===== BMT / CARDIAC: common + specialty questions ===== -->
+        <div class="v-not-oncology">
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"><span class="v-bmt">How much does a bone marrow transplant in India cost?</span><span class="v-cardiac">How much does heart surgery in India cost?</span></button></h3>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">There is no single price — it depends on the diagnosis, the procedure recommended and the hospital. After your reports are reviewed you receive a written indicative estimate for your case. See <a href="#cost">the cost section</a> above.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What does this service cost me?</button></h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Nothing — case review and coordination are free for patients. You pay the hospital directly for treatment.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How do I send my medical reports?</button></h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Upload them in the form on this page, or send them to a care companion on WhatsApp. Both reach the same review team.</div></div>
+          </div>
+          <div class="accordion-item v-bmt">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4b">Which reports are needed for a BMT review?</button></h3>
+            <div id="faq4b" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">CBC / blood reports, bone marrow biopsy, flow cytometry, histopathology and a previous treatment summary. Share what you have; the team will tell you if anything else is needed.</div></div>
+          </div>
+          <div class="accordion-item v-bmt">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4c">Can donor / HLA reports be reviewed?</button></h3>
+            <div id="faq4c" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. If HLA typing or donor evaluation has started, upload those reports too — they help the BMT team advise on donor options and next steps.</div></div>
+          </div>
+          <div class="accordion-item v-cardiac">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4d">Should I send my angiogram and echo?</button></h3>
+            <div id="faq4d" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes — the angiogram, echocardiogram, ECG and your cardiologist's recommendation are the most useful reports for a cardiac surgeon to review. Photos or PDFs are fine.</div></div>
+          </div>
+          <div class="accordion-item v-cardiac">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4e">Can my cardiac reports be reviewed before I travel?</button></h3>
+            <div id="faq4e" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The review, the recommended procedure and the indicative estimate all happen before you decide about travel.</div></div>
+          </div>
+          <div class="accordion-item">
+            <!-- [GCH TO CONFIRM] review turnaround before publishing a specific number of days -->
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">How long does the review take?</button></h3>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">A care companion replies within 24 hours to confirm receipt; the specialist review time depends on the reports and the hospital, and your care companion will tell you the expected timeline for your case.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">How is the hospital or specialist selected?</button></h3>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Your reports are matched to a hospital and specialist appropriate to the diagnosis, stage and treatment required — it is based on your case, not a fixed list.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Can I speak with the doctor before deciding to travel?</button></h3>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Where appropriate for the case, a discussion with the specialist or care team is arranged before you commit to travel.</div></div>
+          </div>
+          <!-- NEPAL: visa not required for Nepali citizens — FAQ commented out
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">Do you help with the medical visa?</button></h3>
+            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes — GlobalCare arranges the hospital visa invitation letter (VIL) and guides you through the medical visa process for Nepali patients. Visa approval remains subject to government rules.</div></div>
+          </div>
+          -->
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">Can a family member contact you on behalf of the patient?</button></h3>
+            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Most families contact us on behalf of a parent, spouse or child — you do not need to be the patient.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">Is my medical information kept confidential?</button></h3>
+            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Reports are seen only by the reviewing specialist and your care companion, and used only to coordinate your case. See our <a href="https://www.globalcarehealth.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">Do I need to decide on travelling to India before contacting you?</button></h3>
+            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. Many families share reports first to understand their options, and decide about travel afterwards.</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 10 — FINAL CTA   (CTA 4 of 4; "no obligation" used once, here)
+       ============================================================ -->
+  <section class="section final-cta" id="final-cta">
+    <div class="final-cta-overlay"></div>
+    <div class="container text-center position-relative" data-animate="fade-up">
+      <div class="route-badge route-badge-light mx-auto"><span class="flag" title="Nepal">🇳🇵</span><span class="route-label">Nepal</span><span class="route-arrow"><i class="fa-solid fa-plane" aria-hidden="true"></i></span><span class="route-label">India</span><span class="flag" title="India">🇮🇳</span></div>
+      <h2 class="final-cta-title"><span class="v-oncology">Know Your Options Before You Travel</span><span class="v-not-oncology">Considering Treatment in India? Start With Your Medical Reports.</span></h2>
+      <p class="final-cta-sub">
+        <span class="v-oncology">Every cancer journey is different. Share your reports and let our team help you understand the next steps for treatment in India.</span>
+        <span class="v-bmt">Share your BMT or blood-disorder reports today and a care companion will guide you through the haematology review, the indicative estimate and what happens next.</span>
+        <span class="v-cardiac">Share your cardiac reports today and a care companion will guide you through the cardiac review, the indicative estimate and what happens next.</span>
+      </p>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+        <a class="btn btn-primary-cta btn-lg js-cta-label" href="#share-reports">Share Medical Reports</a>
+        <a class="btn btn-light-cta btn-lg js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i>Talk to a Patient Coordinator</a>
+      </div>
+      <p class="final-cta-small">No obligation to travel. Your clinical decisions remain with your treating specialist.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 11 — PATIENT STORIES (genuine Facebook videos from GlobalCare Health's page)
+       ============================================================ -->
+  <section class="section section-alt" id="patient-story">
+    <div class="container">
+      <div class="section-head text-center" data-animate="fade-up">
+        <span class="eyebrow">Patient Stories</span>
+        <h2 class="section-title">Patients and Families We Have Supported</h2>
+        <p class="section-lead">Real patient stories, shared with consent, from families who travelled to India with GlobalCare Health.</p>
+      </div>
+      <div class="hospital-slider testimonial-slider" id="testimonialSlider" data-animate="fade-up" data-autoplay="5000">
+        <button class="slider-btn slider-prev" type="button" aria-label="Previous stories"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="slider-track" tabindex="0" aria-label="Patient video stories, scroll horizontally">
+          <!-- Cervical cancer — https://www.facebook.com/share/v/1HAYSnP4uB/ (16:9) -->
+          <article class="testimonial-card testimonial-fb slider-item t-oncology">
+            <div class="fb-thumb fb-thumb--landscape">
+              <iframe class="fb-poster" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F1529678122062408%2F&show_text=false&width=560" title="Preview: cervical cancer treatment story" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no" frameborder="0"></iframe>
+              <button class="video-play" type="button" data-video-url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F1529678122062408%2F&show_text=false" data-fb-href="https://www.facebook.com/61583002562345/videos/1529678122062408/" data-video-ratio="16x9" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Play video: Joyce's cervical cancer treatment story"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+            </div>
+            <div class="testimonial-person"><span class="testimonial-tag"><i class="fa-solid fa-ribbon" aria-hidden="true"></i>Oncology</span><div><strong>Joyce's Cervical Cancer Treatment</strong><span>Patient story · Fiji to India · Max Hospital, Dwarka</span></div></div>
+          </article>
+          <!-- BMT — https://www.facebook.com/share/v/1EWfR2fX2w/ (4:5) -->
+          <article class="testimonial-card testimonial-fb slider-item t-bmt">
+            <div class="fb-thumb fb-thumb--4x5">
+              <iframe class="fb-poster" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F1549026030249796%2F&show_text=false&width=360" title="Preview: bone marrow transplant video" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no" frameborder="0"></iframe>
+              <button class="video-play" type="button" data-video-url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F1549026030249796%2F&show_text=false" data-fb-href="https://www.facebook.com/61583002562345/videos/1549026030249796/" data-video-ratio="9x16" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Play video: bone marrow transplant coordination"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+            </div>
+            <div class="testimonial-person"><span class="testimonial-tag"><i class="fa-solid fa-droplet" aria-hidden="true"></i>BMT</span><div><strong>Bone Marrow Transplant in India</strong><span>How GlobalCare coordinates BMT cases</span></div></div>
+          </article>
+          <!-- Cardiac — https://www.facebook.com/share/v/1dcYktvNaz/ (9:16) -->
+          <article class="testimonial-card testimonial-fb slider-item t-cardiac">
+            <div class="fb-thumb fb-thumb--portrait">
+              <iframe class="fb-poster" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F3859713074163703%2F&show_text=false&width=360" title="Preview: cardiac treatment story" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no" frameborder="0"></iframe>
+              <button class="video-play" type="button" data-video-url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61583002562345%2Fvideos%2F3859713074163703%2F&show_text=false" data-fb-href="https://www.facebook.com/61583002562345/videos/3859713074163703/" data-video-ratio="9x16" data-bs-toggle="modal" data-bs-target="#videoModal" aria-label="Play video: Lemeki's heart treatment story"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+            </div>
+            <div class="testimonial-person"><span class="testimonial-tag"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>Cardiac</span><div><strong>Lemeki's Heart Treatment</strong><span>Mother's story · Fiji to India · Fortis Hospital</span></div></div>
+          </article>
+        </div>
+        <button class="slider-btn slider-next" type="button" aria-label="Next stories"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="slider-dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="footer-brand d-flex align-items-center" href="#hero"><img src="images/logo-transparent.png" alt="GlobalCare Health" class="brand-logo brand-logo--footer" width="911" height="274"></a>
+          <p class="footer-desc">GlobalCare Health coordinates cancer treatment, bone marrow transplant and heart surgery in India for patients and families from Nepal — from report review and specialist matching to travel and arrival support.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/GlobalcareHealthIndia" target="_blank" rel="noopener" aria-label="GlobalCare Health on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/globalcare_health" target="_blank" rel="noopener" aria-label="GlobalCare Health on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/globalcarehealth/" target="_blank" rel="noopener" aria-label="GlobalCare Health on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@Globalcare-health" target="_blank" rel="noopener" aria-label="GlobalCare Health on YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a class="js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener" aria-label="GlobalCare Health on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links list-unstyled">
+            <li><a href="?s=oncology">Cancer Treatment in India</a></li>
+            <li><a href="?s=bmt">Bone Marrow Transplant in India</a></li>
+            <li><a href="?s=cardiac">Heart Surgery in India</a></li>
+            <li><a href="#hospitals">Hospitals</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#nepal-support">Nepal Support</a></li>
+            <li><a href="#faqs">FAQ</a></li>
+            <li><a href="https://www.globalcarehealth.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://www.globalcarehealth.com/terms-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-contact list-unstyled">
+            <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+919211312666">+91 92113 12666</a></li>
+            <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <a class="js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener">+91 92113 12666</a></li>
+            <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:enquiry@globalcarehealth.com">enquiry@globalcarehealth.com</a></li>
+            <li><i class="fa-solid fa-globe" aria-hidden="true"></i> <a href="https://www.globalcarehealth.com/" target="_blank" rel="noopener">globalcarehealth.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Your reports are seen only by the reviewing specialist and your care companion, and used only to coordinate your case review. GlobalCare Health is a medical travel facilitator; all clinical decisions rest with the treating hospital and specialist.</p>
+        <!-- [GCH TO CONFIRM] registered legal entity name and registered office address -->
+        <p>&copy; <span id="year">2026</span> GlobalCare Health. All rights reserved. <span class="footer-sub">A unit of Lavayna Medicare Solutions Private Limited.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating elements -->
+  <a class="float-whatsapp js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+  <a class="float-phone d-lg-none" href="tel:+919211312666" aria-label="Call us"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+  <div class="mobile-cta-bar d-lg-none">
+    <a class="btn btn-whatsapp js-wa" href="https://wa.me/919211312666" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+    <a class="btn btn-primary-cta js-cta-short" href="#share-reports">Share Reports</a>
+  </div>
+
+  <!-- Video story modal (Facebook player via SDK, unmuted; falls back to iframe) -->
+  <div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content video-modal-content">
+        <button type="button" class="lead-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <div class="ratio ratio-16x9" id="videoRatio"><div id="videoHolder"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js?v=20260925b"></script>
+</body>
+</html>
