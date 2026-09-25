@@ -1154,3 +1154,11 @@ font[style] { background: transparent !important; box-shadow: none !important; }
   .hero-flip:not(.is-flipped) .hero-form-card { position: absolute; inset: 0; }
   .hero-flip-page img { object-position: center top; }
 }
+
+/* ============ Trust row (patient avatars + headline figures) under the hero CTAs ============ */
+.hero-trust { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+.hero-avatars { display: flex; flex: 0 0 auto; }
+.hero-avatars img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -10px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.hero-avatars img:first-child { margin-left: 0; }
+.hero-trust strong { display: block; font-family: var(--gc-font-head); font-size: .92rem; color: var(--gc-secondary); }
+.hero-trust span { font-size: .8rem; color: var(--gc-muted); }
